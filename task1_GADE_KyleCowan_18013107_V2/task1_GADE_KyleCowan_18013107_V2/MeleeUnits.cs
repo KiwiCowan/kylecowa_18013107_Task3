@@ -46,7 +46,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             int closestUnit = 0;
 
 
-            for (int k = 0; k < units.Length; k++)
+            for (int k = 0; k < units.Length - 1; k++)
             {
                 if (units[k] != units[mainUnit])
                 {

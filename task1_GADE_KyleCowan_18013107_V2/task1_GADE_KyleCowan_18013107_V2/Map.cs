@@ -33,11 +33,11 @@ namespace task1_GADE_KyleCowan_18013107_V2
             UnitSpawner();
             BuildingSpawner();
 
-            for (int j = 0; j < units.Length; j++)
+            for (int j = 0; j < units.Length-1; j++)
             {
                 Console.WriteLine(units[j].ToString());
             }
-            for (int k = 0; k < buildings.Length; k++)
+            for (int k = 0; k < buildings.Length-1; k++)
             {
                 Console.WriteLine(buildings[k].ToString());
             }
@@ -45,7 +45,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         public void UnitSpawner()
         {
-            for (int j = 0; j < units.Length; j++)
+            for (int j = 0; j < units.Length -1; j++)
             {
                 int UnitType;
                 int factionAllocte;
@@ -54,7 +54,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 int y = rand.Next(1, 20);
                 string faction = "";
                 string symbol = "";
-                UnitType = rand.Next(1, 6);
+                UnitType = rand.Next(1, 5);
 
                 switch (UnitType)
                 {
@@ -142,7 +142,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             buildings[j] = new FactoryBuilding(19, 19, "", "q");
             GameMap[buildings[j].YPos, buildings[j].XPos] = buildings[j].Symbol;
 
-            for (int l = 2; l < buildings.Length; l++) //gen of resource buildings
+            for (int l = 2; l < buildings.Length-1; l++) //gen of resource buildings
             {
                 factionAllocte = rand.Next(1, 3);
                 int x = rand.Next(1, 20);

@@ -14,7 +14,7 @@
         {
             StartGame();
 
-            for (int j = 0; j < map.buildings.Length; j++)
+            for (int j = 0; j < map.buildings.Length ; j++)
             {
                 if (map.buildings[j] != null)
                     map.GameMap[map.buildings[j].YPos, map.buildings[j].XPos] = map.buildings[j].Symbol;
@@ -24,7 +24,7 @@
         private void StartGame()
         {
             
-            for (int j = 0; j < map.units.Length; j++) //runs though all units 
+            for (int j = 0; j < map.units.Length - 1; j++) //runs though all units 
             {
                 if (map.units[j] != null)
                 {
