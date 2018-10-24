@@ -45,13 +45,13 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         public void UnitSpawner()
         {
-            for (int j = 0; j < units.Length -1; j++)
+            for (int j = 0; j < units.Length; j++)
             {
                 int UnitType;
                 int factionAllocte;
 
-                int x = rand.Next(1, 20);
-                int y = rand.Next(1, 20);
+                int x = rand.Next(1, 19);
+                int y = rand.Next(1, 19);
                 string faction = "";
                 string symbol = "";
                 UnitType = rand.Next(1, 5);

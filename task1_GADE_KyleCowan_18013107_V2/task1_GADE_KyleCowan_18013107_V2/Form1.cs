@@ -33,12 +33,12 @@ namespace task1_GADE_KyleCowan_18013107_V2
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
             cmbUnitsDesplay.Items.Clear();
-            for (int l = 0; l < gameE.map.units.Length; l++)
+            for (int l = 0; l < gameE.map.units.Length -1; l++)
             {
                 if (gameE.map.units[l] != null)
                     cmbUnitsDesplay.Items.Add(gameE.map.units[l].ToString());
             }
-            for (int l = 0; l < gameE.map.buildings.Length; l++)
+            for (int l = 0; l < gameE.map.buildings.Length -1; l++)
             {
                 cmbUnitsDesplay.Items.Add(gameE.map.buildings[l].ToString());
             }
@@ -72,7 +72,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         public void ResourceGen()
         {
-            for (int k = 0; k < gameE.map.buildings.Length; k++)
+            for (int k = 0; k < gameE.map.buildings.Length -1; k++)
             {
                 if (gameE.map.buildings[k].Hp > 0)
                 {

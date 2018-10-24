@@ -78,14 +78,19 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
             int distanceX = 0;
             int distanceY = 0;
+            int absDistanceX = 0;
+            int absDistanceY = 0;
 
 
             distanceX = units[hero].XPos - units[enemy].XPos;
             distanceY = units[hero].YPos - units[enemy].YPos;
 
+            absDistanceX = Math.Abs(units[hero].XPos - units[enemy].XPos);
+            absDistanceY = Math.Abs(units[hero].YPos - units[enemy].YPos);
 
 
-            if (distanceX < distanceY)
+
+            if (absDistanceX < absDistanceY)
             {
                 if (distanceX < 0)
                 {
