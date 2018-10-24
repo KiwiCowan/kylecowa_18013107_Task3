@@ -35,7 +35,7 @@
 
         public abstract void Combat(int hero, int enemy, Unit[] units);
 
-        public abstract void RunRandom(Unit hero);
+        public abstract void RunRandom();
 
         
 

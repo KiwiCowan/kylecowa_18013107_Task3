@@ -40,7 +40,7 @@
 
                             if (map.units[j].Hp / map.units[j].MaxHP * 100 <= 25 / 100)
                             {
-                                map.units[j].RunRandom(map.units[j]);
+                                map.units[j].RunRandom();
 
                             }
                             else

@@ -135,11 +135,11 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         }
 
-        public override void RunRandom(Unit hero)
+        public override void RunRandom()
         {
 
             int move = 0;
-            Random rand = new Random(6);
+            Random rand = new Random();
             move = rand.Next(1, 5);
 
 
@@ -148,43 +148,43 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 case 1:
 
 
-                    if (hero.YPos > 0)
+                    if (YPos > 0)
                     {
-                        hero.YPos--; //Up
+                        YPos--; //Up
                     }
                     else
                     {
-                        hero.YPos++;
+                        YPos++;
                     }
                     break;
                 case 2:
-                    if (hero.XPos < 19)
+                    if (XPos < 19)
                     {
-                        hero.XPos++; //Right
+                        XPos++; //Right
                     }
                     else
                     {
-                        hero.XPos++;
+                        XPos++;
                     }
                     break;
                 case 3:
-                    if (hero.YPos < 19)
+                    if (YPos < 19)
                     {
-                        hero.YPos++; //Down
+                        YPos++; //Down
                     }
                     else
                     {
-                        hero.YPos--;
+                        YPos--;
                     }
                     break;
                 case 4:
-                    if (hero.XPos > 0)
+                    if (XPos > 0)
                     {
-                        hero.XPos--; //Left
+                        XPos--; //Left
                     }
                     else
                     {
-                        hero.XPos++;
+                        XPos++;
                     }
                     break;
             }
