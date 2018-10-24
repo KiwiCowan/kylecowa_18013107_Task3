@@ -33,26 +33,24 @@
                     if (map.units[j].Hp > 0)
                     {
                         int closestUnit = map.units[j].ClosestUnitPos(map.units, j);
-
-                        if (map.units[j].AttackRangeCheck(map.units, j, closestUnit) == true)
+                        if (map.units[j].Hp / map.units[j].MaxHP * 100 > 25 / 100)
                         {
-                            map.units[j].Combat(j, closestUnit, map.units);
 
-                            if (map.units[j].Hp / map.units[j].MaxHP * 100 <= 25 / 100)
+                            if (map.units[j].AttackRangeCheck(map.units, j, closestUnit) == true)
                             {
-                                map.units[j].RunRandom();
-
+                                map.units[j].Combat(j, closestUnit, map.units);
+                               
                             }
                             else
                             {
-                                map.units[j].Combat(j, closestUnit, map.units);
+                                map.units[j].MoveUnitPos(j, closestUnit, map.units);
                             }
+                            map.GameMap[map.units[j].YPos, map.units[j].XPos] = map.units[j].Symbol;
                         }
                         else
                         {
-                            map.units[j].MoveUnitPos(j, closestUnit, map.units);
+                            map.units[j].RunRandom();
                         }
-                        map.GameMap[map.units[j].YPos, map.units[j].XPos] = map.units[j].Symbol;
                     }
                     else
                     {

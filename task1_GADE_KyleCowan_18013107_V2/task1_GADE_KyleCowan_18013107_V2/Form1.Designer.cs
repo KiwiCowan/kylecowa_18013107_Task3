@@ -84,9 +84,9 @@
             // cmbUnitsDesplay
             // 
             this.cmbUnitsDesplay.FormattingEnabled = true;
-            this.cmbUnitsDesplay.Location = new System.Drawing.Point(807, 298);
+            this.cmbUnitsDesplay.Location = new System.Drawing.Point(735, 298);
             this.cmbUnitsDesplay.Name = "cmbUnitsDesplay";
-            this.cmbUnitsDesplay.Size = new System.Drawing.Size(171, 24);
+            this.cmbUnitsDesplay.Size = new System.Drawing.Size(309, 24);
             this.cmbUnitsDesplay.TabIndex = 5;
             // 
             // tmrTimer
@@ -99,7 +99,7 @@
             this.lblHammer.AutoSize = true;
             this.lblHammer.Location = new System.Drawing.Point(739, 223);
             this.lblHammer.Name = "lblHammer";
-            this.lblHammer.Size = new System.Drawing.Size(152, 34);
+            this.lblHammer.Size = new System.Drawing.Size(160, 34);
             this.lblHammer.TabIndex = 6;
             this.lblHammer.Text = "HammerHeadR Sharks \r\nResource";
             // 
@@ -108,7 +108,7 @@
             this.lblRagger.AutoSize = true;
             this.lblRagger.Location = new System.Drawing.Point(924, 223);
             this.lblRagger.Name = "lblRagger";
-            this.lblRagger.Size = new System.Drawing.Size(152, 34);
+            this.lblRagger.Size = new System.Drawing.Size(160, 34);
             this.lblRagger.TabIndex = 7;
             this.lblRagger.Text = "RaggerToothR Shark \r\nResource";
             // 
