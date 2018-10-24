@@ -123,14 +123,14 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         }
 
-        public override void Combat(Unit hero, Unit enemy)
+        public override void Combat(int hero, int enemy, Unit[] units)
         {
             int newHp = 0;
-            newHp = enemy.Hp - hero.Atk;
-            enemy.Hp = newHp;
+            newHp = units[enemy].Hp - units[hero].Atk;
+            units[enemy].Hp = newHp;
             if (newHp <= 0)
             {
-                hero = null;
+                units[hero] = null;
             }
 
         }

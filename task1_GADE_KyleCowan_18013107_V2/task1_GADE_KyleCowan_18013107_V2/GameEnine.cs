@@ -36,7 +36,7 @@
 
                         if (map.units[j].AttackRangeCheck(map.units, j, closestUnit) == true)
                         {
-                            map.units[j].Combat(map.units[j], map.units[closestUnit]);
+                            map.units[j].Combat(j, closestUnit, map.units);
 
                             if (map.units[j].Hp / map.units[j].MaxHP * 100 <= 25 / 100)
                             {
@@ -45,7 +45,7 @@
                             }
                             else
                             {
-                                map.units[j].Combat(map.units[j], map.units[closestUnit]);
+                                map.units[j].Combat(j, closestUnit, map.units);
                             }
                         }
                         else

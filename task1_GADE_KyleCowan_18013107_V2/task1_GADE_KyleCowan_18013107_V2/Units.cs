@@ -33,7 +33,7 @@
 
         public abstract void MoveUnitPos(int hero, int enemy, Unit[] units);
 
-        public abstract void Combat(Unit enemy, Unit hero);
+        public abstract void Combat(int hero, int enemy, Unit[] units);
 
         public abstract void RunRandom(Unit hero);
 
