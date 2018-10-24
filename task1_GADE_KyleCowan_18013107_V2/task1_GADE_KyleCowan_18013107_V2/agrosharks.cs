@@ -67,35 +67,58 @@ namespace task1_GADE_KyleCowan_18013107_V2
         public override void MoveUnitPos(int hero, int enemy, Unit[] units)
         {
 
-            int distanceX = 0;
-            int distanceY = 0;
+            //int distanceX = 0;
+            //int distanceY = 0;
 
 
-            distanceX = units[hero].XPos - units[enemy].XPos;
-            distanceY = units[hero].YPos - units[enemy].YPos;
+            //distanceX = units[hero].XPos - units[enemy].XPos;
+            //distanceY = units[hero].YPos - units[enemy].YPos;
 
 
 
-            if (distanceX < distanceY)
+            //if (distanceX < distanceY)
+            //{
+            //    if (distanceX < 0)
+            //    {
+            //        XPos = XPos - 1;
+            //    }
+            //    else if (distanceX > 0)
+            //    {
+            //        XPos = XPos + 1;
+            //    }
+            //}
+            //else
+            //{
+            //    if (distanceY < 0)
+            //    {
+            //        YPos = YPos - 1;
+            //    }
+            //    else if (distanceX > 0)
+            //    {
+            //        YPos = YPos + 1;
+            //    }
+            //}
+            if (units[enemy] != null)
             {
-                if (distanceX < 0)
+                //int DistanceX = (enemy.Xposition - Xposition);
+                //int DistanceY = (enemy.Yposition - Yposition);
+                int distanceX = 0;
+                int distanceY = 0;
+                distanceX = units[hero].XPos - units[enemy].XPos;
+                distanceY = units[hero].YPos - units[enemy].YPos;
+                if (Math.Abs(distanceX) < Math.Abs(distanceY))
                 {
-                    XPos = XPos - 1;
+                    if (distanceX < 0)
+                        units[hero].XPos--;
+                    else if (distanceX > 0)
+                        units[hero].XPos++;
                 }
-                else if (distanceX > 0)
+                else if (Math.Abs(distanceY) < Math.Abs(distanceX))
                 {
-                    XPos = XPos + 1;
-                }
-            }
-            else
-            {
-                if (distanceY < 0)
-                {
-                    YPos = YPos - 1;
-                }
-                else if (distanceX > 0)
-                {
-                    YPos = YPos + 1;
+                    if (distanceY < 0)
+                        units[hero].YPos--;
+                    else if (distanceY > 0)
+                        units[hero].YPos++;
                 }
             }
 

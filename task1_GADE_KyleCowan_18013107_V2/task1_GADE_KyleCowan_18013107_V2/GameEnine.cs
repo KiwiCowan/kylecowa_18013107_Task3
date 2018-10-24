@@ -50,7 +50,7 @@
                         }
                         else
                         {
-                            map.units[j].MoveUnitPos(j, closestUnit, map.units);
+                            map.units[j].MoveUnitPos(j, closestUnit, map.units[]);
                         }
                         map.GameMap[map.units[j].YPos, map.units[j].XPos] = map.units[j].Symbol; 
                     }

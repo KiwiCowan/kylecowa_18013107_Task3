@@ -75,44 +75,75 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         public override void MoveUnitPos(int hero, int enemy, Unit[] units)
         {
-
-            int distanceX = 0;
-            int distanceY = 0;
-            int absDistanceX = 0;
-            int absDistanceY = 0;
-
-
-            distanceX = units[hero].XPos - units[enemy].XPos;
-            distanceY = units[hero].YPos - units[enemy].YPos;
-
-            absDistanceX = Math.Abs(units[hero].XPos - units[enemy].XPos);
-            absDistanceY = Math.Abs(units[hero].YPos - units[enemy].YPos);
+            //int distanceX = 0;
+            //int distanceY = 0;
+            //int absDistanceX = 0;
+            //int absDistanceY = 0;
 
 
-
-            if (absDistanceX < absDistanceY)
+            //distanceX = units[hero].XPos - units[enemy].XPos;
+            //distanceY = units[hero].YPos - units[enemy].YPos;
+            if (units[enemy] != null)
             {
-                if (distanceX < 0)
+                //int DistanceX = (enemy.Xposition - Xposition);
+                //int DistanceY = (enemy.Yposition - Yposition);
+                int distanceX = 0;
+                int distanceY = 0;
+                distanceX = units[hero].XPos - units[enemy].XPos;
+                distanceY = units[hero].YPos - units[enemy].YPos;
+                if (Math.Abs(distanceX) < Math.Abs(distanceY))
                 {
-                    units[hero].XPos = units[hero].XPos - 1;
+                    if (distanceX < 0)
+                        units[hero].XPos--;
+                    else if (distanceX > 0)
+                        units[hero].XPos++;
                 }
-                else if (distanceX > 0)
+                else if (Math.Abs(distanceY) < Math.Abs(distanceX))
                 {
-                    units[hero].XPos = units[hero].XPos + 1;
+                    if (distanceY < 0)
+                        units[hero].YPos--;
+                    else if (distanceY > 0)
+                        units[hero].YPos++;
                 }
-            }
-            else
-            {
-                if (distanceY < 0)
-                {
-                    units[hero].YPos = units[hero].YPos - 1;
-                }
-                else if (distanceX > 0)
-                {
-                    units[hero].YPos = units[hero].YPos + 1;
-                }
-            }
 
+                //int distanceX = 0;
+                //int distanceY = 0;
+                //int absDistanceX = 0;
+                //int absDistanceY = 0;
+
+
+                //distanceX = units[hero].XPos - units[enemy].XPos;
+                //distanceY = units[hero].YPos - units[enemy].YPos;
+
+                //absDistanceX = Math.Abs(units[hero].XPos - units[enemy].XPos);
+                //absDistanceY = Math.Abs(units[hero].YPos - units[enemy].YPos);
+
+
+
+                //if (absDistanceX < absDistanceY)
+                //{
+                //    if (distanceX < 0)
+                //    {
+                //        units[hero].XPos = units[hero].XPos - 1;
+                //    }
+                //    else if (distanceX > 0)
+                //    {
+                //        units[hero].XPos = units[hero].XPos + 1;
+                //    }
+                //}
+                //else
+                //{
+                //    if (distanceY < 0)
+                //    {
+                //        units[hero].YPos = units[hero].YPos - 1;
+                //    }
+                //    else if (distanceX > 0)
+                //    {
+                //        units[hero].YPos = units[hero].YPos + 1;
+                //    }
+                //}
+
+            }
         }
 
         public override bool AttackRangeCheck(Unit[] units, int hero, int enemy)
