@@ -33,12 +33,12 @@ namespace task1_GADE_KyleCowan_18013107_V2
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
             cmbUnitsDesplay.Items.Clear();
-            for (int l = 0; l < gameE.map.units.Length -1; l++)
+            for (int l = 0; l < gameE.map.units.Length-1; l++)
             {
                 if (gameE.map.units[l] != null)
                     cmbUnitsDesplay.Items.Add(gameE.map.units[l].ToString());
             }
-            for (int l = 0; l < gameE.map.buildings.Length -1; l++)
+            for (int l = 0; l < gameE.map.buildings.Length-1; l++)
             {
                 cmbUnitsDesplay.Items.Add(gameE.map.buildings[l].ToString());
             }
@@ -48,7 +48,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             lblHammer.Text = "HammerHeads Resources: " + hammerHead;
             lblRagger.Text = "RaggerTooths Resources: " + raggerTooth;
 
-            gameE.PlayGame();
+            gameE.StartGame();
 
             Timer++;
             lblTimer.Text = "Time: " + Timer;
@@ -96,6 +96,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             gameE.map.GenMap();
             gameE.map.PopMap();
             gameE.map.UnitSpawner();
+            gameE.PlayGame();
             tmrTimer.Start();
            
         }

@@ -109,8 +109,8 @@ namespace task1_GADE_KyleCowan_18013107_V2
             int distanceY = 0;
             int distanceAbs = 0;
 
-            distanceX = Math.Abs(units[hero].XPos - units[enemy].XPos);
-            distanceY = Math.Abs(units[hero].YPos - units[enemy].YPos);
+            distanceX = Math.Abs(units[enemy].XPos - units[hero].XPos);
+            distanceY = Math.Abs(units[enemy].YPos - units[hero].YPos);
             distanceAbs = Convert.ToInt32(Math.Sqrt((Math.Pow(distanceX, 2) + Math.Pow(distanceY, 2))));
             if (distanceAbs <= units[hero].Range)
             {

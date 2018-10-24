@@ -12,7 +12,7 @@
 
         public void PlayGame()
         {
-            StartGame();
+           
 
             for (int j = 0; j < map.buildings.Length; j++)
             {
@@ -21,7 +21,7 @@
             }
         }
 
-        private void StartGame()
+        public void StartGame()
         {
 
             for (int j = 0; j < map.units.Length; j++) //runs though all units 
@@ -39,13 +39,12 @@
                             if (map.units[j].AttackRangeCheck(map.units, j, closestUnit) == true)
                             {
                                 map.units[j].Combat(j, closestUnit, map.units);
-                               
                             }
                             else
                             {
                                 map.units[j].MoveUnitPos(j, closestUnit, map.units);
+                                map.GameMap[map.units[j].YPos, map.units[j].XPos] = map.units[j].Symbol;
                             }
-                            map.GameMap[map.units[j].YPos, map.units[j].XPos] = map.units[j].Symbol;
                         }
                         else
                         {
