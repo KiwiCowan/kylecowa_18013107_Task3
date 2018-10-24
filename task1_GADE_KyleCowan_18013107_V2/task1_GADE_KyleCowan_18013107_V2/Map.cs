@@ -33,11 +33,11 @@ namespace task1_GADE_KyleCowan_18013107_V2
             UnitSpawner();
             BuildingSpawner();
 
-            for (int j = 0; j < units.Length-1; j++)
+            for (int j = 0; j < units.Length - 1; j++)
             {
                 Console.WriteLine(units[j].ToString());
             }
-            for (int k = 0; k < buildings.Length-1; k++)
+            for (int k = 0; k < buildings.Length - 1; k++)
             {
                 Console.WriteLine(buildings[k].ToString());
             }
@@ -79,12 +79,12 @@ namespace task1_GADE_KyleCowan_18013107_V2
                         factionAllocte = rand.Next(1, 3);
                         switch (factionAllocte)
                         {
-                            case 1: 
+                            case 1:
                                 faction = "Hammerhead";
                                 symbol = "h";
                                 break;
 
-                            case 2: 
+                            case 2:
                                 faction = "Raggertooth";
                                 symbol = "r";
                                 break;
@@ -142,7 +142,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             buildings[j] = new FactoryBuilding(19, 19, "", "q");
             GameMap[buildings[j].YPos, buildings[j].XPos] = buildings[j].Symbol;
 
-            for (int l = 2; l < buildings.Length-1; l++) //gen of resource buildings
+            for (int l = 2; l < buildings.Length - 1; l++) //gen of resource buildings
             {
                 factionAllocte = rand.Next(1, 3);
                 int x = rand.Next(1, 20);
@@ -150,12 +150,12 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
                 switch (factionAllocte)
                 {
-                    case 1: 
+                    case 1:
                         faction = "Hammerhead";
                         symbol = "D";
                         break;
 
-                    case 2: 
+                    case 2:
                         faction = "Raggertooth";
                         symbol = "d";
                         break;

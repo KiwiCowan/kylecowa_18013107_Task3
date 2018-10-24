@@ -84,15 +84,17 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 int distanceY = 0;
                 distanceX = units[enemy].XPos - units[hero].XPos;
                 distanceY = units[enemy].YPos - units[hero].YPos;
+                Map m = new Map();
+                
                 if (Math.Abs(distanceX) <= Math.Abs(distanceY))
                 {
                     if (distanceX < 0)
                     {
-                        units[hero].XPos--;
+                        units[hero].XPos = units[hero].XPos - 1;
                     }
                     else if (distanceX > 0)
                     {
-                        units[hero].XPos++;
+                        units[hero].XPos = units[hero].XPos +1;
                     }
                 }
 
@@ -100,11 +102,11 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 {
                     if (distanceY < 0)
                     {
-                        units[hero].YPos--;
+                        units[hero].YPos = units[hero].YPos -1;
                     }
                     else if (distanceY > 0)
                     {
-                        units[hero].YPos++;
+                        units[hero].YPos = units[hero].YPos +1;
                     }
                 }
 
