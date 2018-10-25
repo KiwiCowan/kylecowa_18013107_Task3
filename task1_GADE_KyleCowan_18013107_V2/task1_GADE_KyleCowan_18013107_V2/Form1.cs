@@ -38,15 +38,8 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 if (gameE.map.units[l] != null)
                     cmbUnitsDesplay.Items.Add(gameE.map.units[l].ToString());
             }
-            for (int l = 0; l < gameE.map.buildings.Length - 1; l++)
-            {
-                cmbUnitsDesplay.Items.Add(gameE.map.buildings[l].ToString());
-            }
+            
 
-            ResourceGen();
-
-            lblHammer.Text = "HammerHeads Resources: " + hammerHead;
-            lblRagger.Text = "RaggerTooths Resources: " + raggerTooth;
             RedrawMap();
             gameE.StartGame();
 
@@ -70,25 +63,6 @@ namespace task1_GADE_KyleCowan_18013107_V2
             }
         }
 
-        public void ResourceGen()
-        {
-            for (int k = 0; k < gameE.map.buildings.Length - 1; k++)
-            {
-                if (gameE.map.buildings[k].Hp > 0)
-                {
-                    if (gameE.map.buildings[k].Faction == "Hammerhead")
-                    {
-                        gameE.resources.HammerHeadR_Gen();
-                        hammerHead = gameE.resources.HammerHeadR;
-                    }
-                    else
-                    {
-                        gameE.resources.RaggerToothR_Gen();
-                        raggerTooth = gameE.resources.RaggerToothR;
-                    }
-                }
-            }
-        }
 
         private void btnStart_Click(object sender, EventArgs e)
         {

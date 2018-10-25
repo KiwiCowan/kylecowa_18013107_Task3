@@ -3,7 +3,6 @@
     class GameEngine
     {
         public Map map = new Map();
-        public ResourceBuilding resources = new ResourceBuilding(0, 0, ".", ".");
 
         public GameEngine()
         {
@@ -12,18 +11,6 @@
 
         public void PlayGame()
         {
-           
-
-            for (int j = 0; j < map.buildings.Length; j++)
-            {
-                if (map.buildings[j] != null)
-                    map.GameMap[map.buildings[j].YPos, map.buildings[j].XPos] = map.buildings[j].Symbol;
-            }
-        }
-
-        public void StartGame()
-        {
-
             for (int j = 0; j < map.units.Length; j++) //runs though all units 
             {
                 if (map.units[j] != null)
@@ -32,7 +19,7 @@
 
                     if (map.units[j].Hp > 0)
                     {
-                        
+
                         //int closestUnit = map.units[j].ClosestUnitPos(map.units, j);
                         //System.Console.WriteLine(j + " unit " + map.units[j].Faction + " finds  unit " + closestUnit + " , " + map.units[j].Faction + " at" + map.units[closestUnit].XPos + " , "  + map.units[closestUnit].YPos);
                         if (map.units[j].Hp / map.units[j].MaxHP * 100 > 25 / 100)
@@ -59,10 +46,16 @@
                         map.units[j] = null;
                     }
                 }
-                System.Console.WriteLine(map.units[j].ToString());
-                Unit clostest = map.units[j].closestUnit(map.units);
-                System.Console.WriteLine("unit " + j + "is looking for " + clostest.ToString());
+                //System.Console.WriteLine(map.units[j].ToString());
+                //Unit clostest = map.units[j].closestUnit(map.units);
+                //System.Console.WriteLine("unit " + j + "is looking for " + clostest.ToString());
             }
+        }
+
+        public void StartGame()
+        {
+
+           
         }
     }
 }
