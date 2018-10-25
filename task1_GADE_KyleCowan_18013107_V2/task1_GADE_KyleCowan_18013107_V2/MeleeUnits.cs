@@ -39,38 +39,24 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         public override Unit closestUnit(Unit[] units)
         {
-            int closestDist = 500;
-            int distanceX = 0;
-            int distanceY = 0;
-            int distanceAbs = 0;
-            int closestUnit = 0;
-            Unit returnUnit = null;
-
+            int tDistance = 500;
+            int Distance = tDistance;
+            Unit feedBackUnit = null;
 
             for (int k = 0; k < units.Length; k++)
             {
-                if (units[k] != this)
+                //finding the distance
+                if (units[k] != null && units[k] != this && units[k].Hp > 0 && units[k].Faction != faction)
+                    Distance = ((XPos - units[k].XPos) ^ 2 + (YPos - units[k].YPos) ^ 2) ^ 1 / 2;
+                if (Distance < 0)
+                    Distance = Math.Abs(Distance);
+                if (Distance < tDistance)
                 {
-                    if (units[k] != null)
-                    {
-                        if (units[k].Faction != Faction)
-                        {
-                            distanceX = Math.Abs(XPos - units[k].XPos);
-                            distanceY = Math.Abs(YPos - units[k].YPos);
-                            distanceAbs = Convert.ToInt32(Math.Sqrt((Math.Pow(distanceX, 2) + Math.Pow(distanceY, 2))));
-
-                            if (distanceAbs < closestDist)
-                            {
-                                closestUnit = k;
-                                returnUnit = units[closestUnit];
-                            }
-                        }
-                    }
+                    tDistance = Distance;
+                    feedBackUnit = units[k];
                 }
             }
-            closestUnit = 0;
-            return returnUnit;
-
+            return feedBackUnit;
 
         }
 
