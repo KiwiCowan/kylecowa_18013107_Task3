@@ -33,12 +33,12 @@ namespace task1_GADE_KyleCowan_18013107_V2
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
             cmbUnitsDesplay.Items.Clear();
-            for (int l = 0; l < gameE.map.units.Length-1; l++)
+            for (int l = 0; l < gameE.map.units.Length - 1; l++)
             {
                 if (gameE.map.units[l] != null)
                     cmbUnitsDesplay.Items.Add(gameE.map.units[l].ToString());
             }
-            for (int l = 0; l < gameE.map.buildings.Length-1; l++)
+            for (int l = 0; l < gameE.map.buildings.Length - 1; l++)
             {
                 cmbUnitsDesplay.Items.Add(gameE.map.buildings[l].ToString());
             }
@@ -47,14 +47,14 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
             lblHammer.Text = "HammerHeads Resources: " + hammerHead;
             lblRagger.Text = "RaggerTooths Resources: " + raggerTooth;
-
+            RedrawMap();
             gameE.StartGame();
 
             Timer++;
             lblTimer.Text = "Time: " + Timer;
 
-            RedrawMap();
-            
+
+
         }
 
         public void RedrawMap()
@@ -72,7 +72,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         public void ResourceGen()
         {
-            for (int k = 0; k < gameE.map.buildings.Length -1; k++)
+            for (int k = 0; k < gameE.map.buildings.Length - 1; k++)
             {
                 if (gameE.map.buildings[k].Hp > 0)
                 {
@@ -98,12 +98,12 @@ namespace task1_GADE_KyleCowan_18013107_V2
             gameE.map.UnitSpawner();
             gameE.PlayGame();
             tmrTimer.Start();
-           
+
         }
 
         private void btnStop_Click(object sender, EventArgs e)
         {
-                tmrTimer.Stop();
+            tmrTimer.Stop();
         }
     }
 }

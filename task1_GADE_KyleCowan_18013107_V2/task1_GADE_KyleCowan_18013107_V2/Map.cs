@@ -50,8 +50,8 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 int UnitType;
                 int factionAllocte;
 
-                int x = rand.Next(1, 19);
-                int y = rand.Next(1, 19);
+                int x = rand.Next(1, 20);
+                int y = rand.Next(1, 20);
                 string faction = "";
                 string symbol = "";
                 UnitType = rand.Next(1, 5);
@@ -124,7 +124,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
                         units[j] = new AgroSharks(x, y, faction, symbol);
                         break;
                 }
-                //GameMap[units[j].YPos, units[j].XPos] = units[j].Symbol;
+                GameMap[units[j].YPos, units[j].XPos] = units[j].Symbol;
             }
         }
 
