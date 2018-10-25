@@ -27,13 +27,13 @@
         {
         }
 
-        public abstract int ClosestUnitPos(Unit[] units, int mainUnit);
+        public abstract Unit closestUnit(Unit[] units);
 
-        public abstract bool AttackRangeCheck(Unit[] units, int hero, int enemy);
+        public abstract bool AttackRangeCheck(Unit unit);
 
-        public abstract void MoveUnitPos(int hero, int enemy, Unit[] units);
+        public abstract void MoveUnitPos(Unit unit);
 
-        public abstract void Combat(int hero, int enemy, Unit[] units);
+        public abstract void Combat(Unit unit);
 
         public abstract void RunRandom();
 

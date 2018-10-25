@@ -9,7 +9,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         public MeleeUnit(int Xpos, int Ypos, string faction, string symbol) : base(Xpos, Ypos, faction, symbol)
         {
-            
+
             this.XPos = Xpos;
             this.YPos = Ypos;
             if (Xpos < 0)
@@ -37,64 +37,65 @@ namespace task1_GADE_KyleCowan_18013107_V2
             return Faction + "." + myType + "." + (XPos + 1) + "." + (YPos + 1) + "." + Hp;
         }
 
-        public override int ClosestUnitPos(Unit[] units, int mainUnit)
+        public override Unit closestUnit(Unit[] units)
         {
             int closestDist = 500;
             int distanceX = 0;
             int distanceY = 0;
             int distanceAbs = 0;
             int closestUnit = 0;
+            Unit returnUnit = null;
 
 
-            for (int k = 0; k < units.Length ; k++)
+            for (int k = 0; k < units.Length; k++)
             {
-                if (units[k] != units[mainUnit])
+                if (units[k] != this)
                 {
                     if (units[k] != null)
                     {
-                        if (units[k].Faction != units[mainUnit].Faction)
+                        if (units[k].Faction != Faction)
                         {
-                            distanceX = Math.Abs(units[mainUnit].XPos - units[k].XPos);
-                            distanceY = Math.Abs(units[mainUnit].YPos - units[k].YPos);
+                            distanceX = Math.Abs(XPos - units[k].XPos);
+                            distanceY = Math.Abs(YPos - units[k].YPos);
                             distanceAbs = Convert.ToInt32(Math.Sqrt((Math.Pow(distanceX, 2) + Math.Pow(distanceY, 2))));
 
                             if (distanceAbs < closestDist)
                             {
                                 closestUnit = k;
+                                returnUnit = units[closestUnit];
                             }
                         }
                     }
                 }
-
-
-
-
             }
-            return closestUnit;
+            closestUnit = 0;
+            return returnUnit;
+
+
         }
 
-        public override void MoveUnitPos(int hero, int enemy, Unit[] units)
+        public override void MoveUnitPos(Unit units)
         {
-           
 
-            if (units[enemy] != null)
+
+            if (units != null)
             {
 
                 int distanceX = 0;
                 int distanceY = 0;
-                distanceX = units[enemy].XPos - units[hero].XPos;
-                distanceY = units[enemy].YPos - units[hero].YPos;
+                distanceX = units.XPos - XPos;
+                distanceY = units.YPos - YPos;
                 Map m = new Map();
-                
+
                 if (Math.Abs(distanceX) <= Math.Abs(distanceY))
                 {
                     if (distanceX < 0)
                     {
-                        units[hero].XPos = units[hero].XPos - 1;
+                        XPos = XPos - 1;
                     }
                     else if (distanceX > 0)
                     {
-                        units[hero].XPos = units[hero].XPos +1;
+                        XPos = XPos + 1;
                     }
                 }
 
@@ -102,11 +103,11 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 {
                     if (distanceY < 0)
                     {
-                        units[hero].YPos = units[hero].YPos -1;
+                        YPos = YPos - 1;
                     }
                     else if (distanceY > 0)
                     {
-                        units[hero].YPos = units[hero].YPos +1;
+                        YPos = YPos + 1;
                     }
                 }
 
@@ -114,15 +115,15 @@ namespace task1_GADE_KyleCowan_18013107_V2
             }
         }
 
-        public override bool AttackRangeCheck(Unit[] units, int hero, int enemy)
+        public override bool AttackRangeCheck(Unit unit)
         {
 
             int distanceX = 0;
             int distanceY = 0;
             int distanceAbs = 0;
 
-            distanceX = Math.Abs(units[enemy].XPos - units[hero].XPos);
-            distanceY = Math.Abs(units[enemy].YPos - units[hero].YPos);
+            distanceX = Math.Abs(unit.XPos - XPos);
+            distanceY = Math.Abs(unit.YPos - YPos);
             distanceAbs = Convert.ToInt32(Math.Sqrt((Math.Pow(distanceX, 2) + Math.Pow(distanceY, 2))));
             if (distanceAbs <= Range)
             {
@@ -135,24 +136,24 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         }
 
-        public override void Combat(int hero, int enemy, Unit[] units)
+        public override void Combat(Unit units)
         {
             int newHp = 0;
-            newHp = units[enemy].Hp - units[hero].Atk;
-            units[enemy].Hp = newHp;
+            newHp = units.Hp - Atk;
+            units.Hp = newHp;
             if (newHp <= 0)
             {
-                units[hero] = null;
+                units = null;
             }
 
         }
 
-        public override void RunRandom() 
+        public override void RunRandom()
         {
-            
+
             int move = 0;
             Random rand = new Random();
-            move = rand.Next(1, 5); 
+            move = rand.Next(1, 5);
 
 
             switch (move)
