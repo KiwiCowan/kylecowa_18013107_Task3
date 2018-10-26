@@ -12,7 +12,7 @@
         public void PlayGame()
         {
 
-            for (int j = 0; j < map.units.Length; j++) //runs though all units 
+            for (int j = 0; j < 10; j++) //runs though all units 
             {
                 if (map.units[j] != null)
                 {
@@ -29,6 +29,7 @@
                             if (map.units[j].AttackRangeCheck(map.units[j].ClosestUnit(map.units)) == true)
                             {
                                 map.units[j].Combat(map.units[j].ClosestUnit(map.units));
+                                //System.Console.WriteLine("unit " + j + " is fighing " + map.units[j].ClosestUnit(map.units));
                             }
                             else
                             {
@@ -46,10 +47,7 @@
                         map.units[j] = null;
                     }
                 }
-                else
-                {
-
-                }
+                //System.Console.WriteLine("unit " + j + " is fighing " + map.units[j].ClosestUnit(map.units));
                 //System.Console.WriteLine(map.units[j].ToString());
                 //Unit clostest = map.units[j].closestUnit(map.units);
                 //System.Console.WriteLine("unit " + j + "is looking for " + clostest.ToString());

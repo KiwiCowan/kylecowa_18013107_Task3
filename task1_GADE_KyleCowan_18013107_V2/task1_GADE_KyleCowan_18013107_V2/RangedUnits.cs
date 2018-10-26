@@ -12,7 +12,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             this.XPos = Xpos;
             this.YPos = Ypos;
             this.hp = 100;
-            this.atk = 5;
+            this.atk = 10;
             this.range = 3;
             this.faction = faction;
             this.symbol = symbol;
@@ -45,7 +45,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
                             int xDistance = (XPos - units[k].XPos);
                             int yDistance = (YPos - units[k].YPos);
 
-                            closestUnit = Math.Abs((xDistance ^ 2 + yDistance ^ 2) ^ 1 / 2);
+                            closestUnit = Math.Abs(xDistance + yDistance);
 
                             if (closestUnit < distance)
                             {
@@ -157,7 +157,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             units.Hp = newHp;
             if (newHp <= 0)
             {
-                units = null;
+              //  units = null;
             }
 
         }
