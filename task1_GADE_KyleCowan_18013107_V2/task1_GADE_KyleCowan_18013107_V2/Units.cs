@@ -27,7 +27,7 @@
         {
         }
 
-        public abstract Unit closestUnit(Unit[] units);
+        public abstract Unit ClosestUnit(Unit[] units);
 
         public abstract bool AttackRangeCheck(Unit unit);
 
