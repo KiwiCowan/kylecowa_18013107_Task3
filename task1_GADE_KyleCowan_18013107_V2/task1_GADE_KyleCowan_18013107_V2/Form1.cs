@@ -38,11 +38,10 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 if (gameE.map.units[l] != null)
                     cmbUnitsDesplay.Items.Add(gameE.map.units[l].ToString());
             }
-
-            gameE.PlayGame();
+            
 
             RedrawMap();
-            
+            gameE.StartGame();
 
             Timer++;
             lblTimer.Text = "Time: " + Timer;
@@ -69,7 +68,10 @@ namespace task1_GADE_KyleCowan_18013107_V2
         private void btnStart_Click(object sender, EventArgs e)
         {
             Timer = 0;
-            gameE.StartGame();
+            gameE.map.GenMap();
+            gameE.map.PopMap();
+            //gameE.map.UnitSpawner();
+            gameE.PlayGame();
             tmrTimer.Start();
 
         }

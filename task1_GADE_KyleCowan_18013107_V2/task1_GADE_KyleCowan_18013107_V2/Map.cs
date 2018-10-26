@@ -23,23 +23,17 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 for (int x = 0; x < 20; x++)
                 {
                     GameMap[y, x] = ",";
-                    
-
                 }
             }
         }
 
-        public void MapDisplay()
+        public void PopMap()
         {
-            GenMap();
-            UnitSpawner();
-            for (int j = 0; j < units.Length; j++)
-            {
-                GameMap[units[j].YPos, units[j].XPos] = units[j].Symbol;
-            }
+            UnitSpawner();//
+           
         }
 
-        public void UnitSpawner()
+        public void UnitSpawner()//
         {
             for (int j = 0; j < units.Length; j++)
             {
@@ -87,21 +81,13 @@ namespace task1_GADE_KyleCowan_18013107_V2
                         }
                         units[j] = new RangeUnit(x, y, faction, symbol);
                         break;
-
+                   
                 }
-               
+                GameMap[units[j].YPos, units[j].XPos] = units[j].Symbol;
             }
         }
 
-        public void MoveUnitPosMap(Unit unit)
-        {
 
-            GameMap[unit.YPos, unit.XPos] = ",";
-            unit.MoveUnitPos(unit.ClosestUnit(units));
-            GameMap[unit.YPos, unit.XPos] = unit.Symbol;
-
-        }
-        
     }
 
 }
