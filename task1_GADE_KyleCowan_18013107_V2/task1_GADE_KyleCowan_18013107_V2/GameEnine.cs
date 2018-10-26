@@ -22,7 +22,7 @@
 
                         //int closestUnit = map.units[j].ClosestUnitPos(map.units, j);
                         //System.Console.WriteLine(j + " unit " + map.units[j].Faction + " finds  unit " + closestUnit + " , " + map.units[j].Faction + " at" + map.units[closestUnit].XPos + " , "  + map.units[closestUnit].YPos);
-                        if ((map.units[j].Hp / map.units[j].MaxHP) * 100 > 25 / 100)
+                        if (map.units[j].Hp / map.units[j].MaxHP * 100 > 25 / 100)
                         {
 
                             if (map.units[j].AttackRangeCheck(map.units[j].closestUnit(map.units)) == true)

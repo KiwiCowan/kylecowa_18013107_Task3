@@ -33,7 +33,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
         private void tmrTimer_Tick(object sender, EventArgs e)
         {
             cmbUnitsDesplay.Items.Clear();
-            for (int l = 0; l < gameE.map.units.Length; l++)
+            for (int l = 0; l < gameE.map.units.Length - 1; l++)
             {
                 if (gameE.map.units[l] != null)
                     cmbUnitsDesplay.Items.Add(gameE.map.units[l].ToString());
@@ -61,7 +61,6 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 }
                 lblMap.Text += "\n";
             }
-
         }
 
 

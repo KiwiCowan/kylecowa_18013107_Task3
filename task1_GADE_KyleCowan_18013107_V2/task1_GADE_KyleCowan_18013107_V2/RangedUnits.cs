@@ -119,7 +119,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             int newHp = 0;
             newHp = units.Hp - Atk;
             units.Hp = newHp;
-            if (IsDead(newHp) == true)
+            if (newHp <= 0)
             {
                 units = null;
             }
@@ -182,17 +182,6 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
         }
 
-        public bool IsDead(int hp)
-        {
-            bool returnVal = false;
-            if (hp <= 0)
-            {
-                returnVal = true;
-            }
-            return returnVal;
-        }
-
 
     }
 }
-
