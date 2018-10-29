@@ -27,7 +27,11 @@
         {
         }
 
+<<<<<<< HEAD
         public abstract int ClosestUnitPos(Unit[] units, int mainUnit);
+=======
+        public abstract Unit ClosestUnit(Unit[] units);
+>>>>>>> 29ef97d2b55e6eae9bc0499326477d690f893229
 
         public abstract bool AttackRangeCheck(Unit[] units, int hero, int enemy);
 
