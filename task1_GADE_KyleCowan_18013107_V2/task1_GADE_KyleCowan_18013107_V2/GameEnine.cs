@@ -17,21 +17,27 @@
                 if (map.units[j] != null)
                 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+                    map.GameMap[map.units[j].YPos, map.units[j].XPos] = ",";
+>>>>>>> parent of 3c627e0... Revert "v12"
 
                     if (map.units[j].Hp > 0)
                     {
-                        int closestUnit = map.units[j].ClosestUnitPos(map.units, j);
+                        
+                        //int closestUnit = map.units[j].ClosestUnitPos(map.units, j);
+                        //System.Console.WriteLine(j + " unit " + map.units[j].Faction + " finds  unit " + closestUnit + " , " + map.units[j].Faction + " at" + map.units[closestUnit].XPos + " , "  + map.units[closestUnit].YPos);
                         if (map.units[j].Hp / map.units[j].MaxHP * 100 > 25 / 100)
                         {
 
-                            if (map.units[j].AttackRangeCheck(map.units, j, closestUnit) == true)
+                            if (map.units[j].AttackRangeCheck(map.units[j].closestUnit(map.units)) == true)
                             {
-                                map.units[j].Combat(j, closestUnit, map.units);
+                                map.units[j].Combat(map.units[j].closestUnit(map.units));
                             }
                             else
                             {
-                                map.units[j].MoveUnitPos(j, closestUnit, map.units);
+                                map.units[j].MoveUnitPos(map.units[j].closestUnit(map.units));
                                 map.GameMap[map.units[j].YPos, map.units[j].XPos] = map.units[j].Symbol;
 =======
                     //map.GameMap[map.units[j].YPos, map.units[j].XPos] = ",";
@@ -67,12 +73,18 @@
                     }
                 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
                 //System.Console.WriteLine("unit " + j + " is fighing " + map.units[j].ClosestUnit(map.units));
                 //System.Console.WriteLine(map.units[j].ToString());
                 //Unit clostest = map.units[j].closestUnit(map.units);
                 //System.Console.WriteLine("unit " + j + "is looking for " + clostest.ToString());
 >>>>>>> 29ef97d2b55e6eae9bc0499326477d690f893229
+=======
+                System.Console.WriteLine(map.units[j].ToString());
+                Unit clostest = map.units[j].closestUnit(map.units);
+                System.Console.WriteLine("unit " + j + "is looking for " + clostest.ToString());
+>>>>>>> parent of 3c627e0... Revert "v12"
             }
         }
 

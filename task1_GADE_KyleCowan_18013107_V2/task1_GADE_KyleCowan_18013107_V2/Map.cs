@@ -32,7 +32,11 @@ namespace task1_GADE_KyleCowan_18013107_V2
         public void MapDisplay()
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             UnitSpawner();
+=======
+            UnitSpawner();//
+>>>>>>> parent of 3c627e0... Revert "v12"
             BuildingSpawner();
 
             for (int j = 0; j < units.Length - 1; j++)
@@ -50,7 +54,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             }
         }
 
-        public void UnitSpawner()
+        public void UnitSpawner()//
         {
             for (int j = 0; j < units.Length; j++)
             {

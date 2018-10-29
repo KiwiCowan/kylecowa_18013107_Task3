@@ -28,16 +28,20 @@
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         public abstract int ClosestUnitPos(Unit[] units, int mainUnit);
 =======
         public abstract Unit ClosestUnit(Unit[] units);
 >>>>>>> 29ef97d2b55e6eae9bc0499326477d690f893229
+=======
+        public abstract Unit closestUnit(Unit[] units);
+>>>>>>> parent of 3c627e0... Revert "v12"
 
-        public abstract bool AttackRangeCheck(Unit[] units, int hero, int enemy);
+        public abstract bool AttackRangeCheck(Unit unit);
 
-        public abstract void MoveUnitPos(int hero, int enemy, Unit[] units);
+        public abstract void MoveUnitPos(Unit unit);
 
-        public abstract void Combat(int hero, int enemy, Unit[] units);
+        public abstract void Combat(Unit unit);
 
         public abstract void RunRandom();
 

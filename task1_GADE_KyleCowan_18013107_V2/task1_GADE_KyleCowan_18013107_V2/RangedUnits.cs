@@ -29,12 +29,16 @@ namespace task1_GADE_KyleCowan_18013107_V2
         }
 
 <<<<<<< HEAD
-        public override int ClosestUnitPos(Unit[] units, int mainUnit)
-        {
 <<<<<<< HEAD
+        public override int ClosestUnitPos(Unit[] units, int mainUnit)
+=======
+        public override Unit closestUnit(Unit[] units)
+>>>>>>> parent of 3c627e0... Revert "v12"
+        {
             int tDistance = 500;
             int Distance = tDistance;
             Unit feedBackUnit = null;
+<<<<<<< HEAD
 =======
             int closestDist = 100;
             int distanceX = 0;
@@ -50,11 +54,16 @@ namespace task1_GADE_KyleCowan_18013107_V2
             int closestUnit = distance;
             Unit returnunit = null;
 >>>>>>> 29ef97d2b55e6eae9bc0499326477d690f893229
+=======
+>>>>>>> parent of 3c627e0... Revert "v12"
 
-            for (int k = 0; k < units.Length -1 ; k++)
+            for (int k = 0; k < units.Length; k++)
             {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 3c627e0... Revert "v12"
                 //finding the distance
                 if (units[k] != null && units[k] != this && units[k].Hp > 0 && units[k].Faction != faction)
                     Distance = ((XPos - units[k].XPos) ^ 2 + (YPos - units[k].YPos) ^ 2) ^ 1 / 2;
@@ -85,27 +94,9 @@ namespace task1_GADE_KyleCowan_18013107_V2
             }
 <<<<<<< HEAD
             return feedBackUnit;
-=======
-                if (units[k] != units[mainUnit])
-                {
-                    if (units[k] != null)
-                    {
-                        if (units[k].Faction != units[mainUnit].Faction)
-                        {
-                            distanceX = Math.Abs(units[mainUnit].XPos - units[k].XPos);
-                            distanceY = Math.Abs(units[mainUnit].YPos - units[k].YPos);
-                            distanceAbs = Convert.ToInt32(Math.Sqrt((Math.Pow(distanceX, 2) + Math.Pow(distanceY, 2))));
-
-                            if (distanceAbs < closestDist)
-                            {
-                                closestUnit = k;
-                            }
-                        }
-                    }
-                }
->>>>>>> parent of d876a44... v12
 
 
+<<<<<<< HEAD
 =======
             return returnunit;
         }
@@ -114,18 +105,24 @@ namespace task1_GADE_KyleCowan_18013107_V2
 
             }
             return closestUnit;
+=======
+>>>>>>> parent of 3c627e0... Revert "v12"
         }
 
-        public override void MoveUnitPos(int hero, int enemy, Unit[] units)
+        public override void MoveUnitPos(Unit units)
         {
-            if (units[enemy] != null)
+
+
+            if (units != null)
             {
 
 <<<<<<< HEAD
                 int distanceX = 0;
                 int distanceY = 0;
-                distanceX = units[enemy].XPos - units[hero].XPos;
-                distanceY = units[enemy].YPos - units[hero].YPos;
+                distanceX = units.XPos - XPos;
+                distanceY = units.YPos - YPos;
+                Map m = new Map();
+
                 if (Math.Abs(distanceX) <= Math.Abs(distanceY))
 =======
                 double distanceX = 0;
@@ -140,6 +137,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
                     if (Math.Abs(distanceX) <= Math.Abs(distanceY))
                     {
 <<<<<<< HEAD
+<<<<<<< HEAD
                         units[hero].XPos--;
 =======
                         if (distanceX < 0)
@@ -151,10 +149,14 @@ namespace task1_GADE_KyleCowan_18013107_V2
                             XPos = XPos + 1;
                         }
 >>>>>>> 29ef97d2b55e6eae9bc0499326477d690f893229
+=======
+                        XPos = XPos - 1;
+>>>>>>> parent of 3c627e0... Revert "v12"
                     }
 
                     else
                     {
+<<<<<<< HEAD
 <<<<<<< HEAD
                         units[hero].XPos++;
 =======
@@ -167,17 +169,20 @@ namespace task1_GADE_KyleCowan_18013107_V2
                             YPos = YPos + 1;
                         }
 >>>>>>> 29ef97d2b55e6eae9bc0499326477d690f893229
+=======
+                        XPos = XPos + 1;
+>>>>>>> parent of 3c627e0... Revert "v12"
                     }
                 }
                 else if (Math.Abs(distanceY) == 0)
                 {
                     if (distanceY < 0)
                     {
-                        units[hero].YPos--;
+                        YPos = YPos - 1;
                     }
                     else if (distanceY > 0)
                     {
-                        units[hero].YPos++;
+                        YPos = YPos + 1;
                     }
                 }
                 else if (Math.Abs(distanceX) == 0)
@@ -196,7 +201,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             }
         }
 
-        public override bool AttackRangeCheck(Unit[] units, int hero, int enemy)
+        public override bool AttackRangeCheck(Unit unit)
         {
 
             int distanceX = 0;
@@ -205,8 +210,13 @@ namespace task1_GADE_KyleCowan_18013107_V2
             bool returnVal = false;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
             distanceX = Math.Abs(units[enemy].XPos - units[hero].XPos);
             distanceY = Math.Abs(units[enemy].YPos - units[hero].YPos);
+=======
+            distanceX = Math.Abs(unit.XPos - XPos);
+            distanceY = Math.Abs(unit.YPos - YPos);
+>>>>>>> parent of 3c627e0... Revert "v12"
             distanceAbs = Convert.ToInt32(Math.Sqrt((Math.Pow(distanceX, 2) + Math.Pow(distanceY, 2))));
             if (distanceAbs <= Range)
 =======
@@ -226,23 +236,31 @@ namespace task1_GADE_KyleCowan_18013107_V2
                 }
             }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
             return returnVal;
 >>>>>>> 29ef97d2b55e6eae9bc0499326477d690f893229
+=======
+
+>>>>>>> parent of 3c627e0... Revert "v12"
         }
 
-        public override void Combat(int hero, int enemy, Unit[] units)
+        public override void Combat(Unit units)
         {
             int newHp = 0;
-            newHp = units[enemy].Hp - units[hero].Atk;
-            units[enemy].Hp = newHp;
+            newHp = units.Hp - Atk;
+            units.Hp = newHp;
             if (newHp <= 0)
             {
+<<<<<<< HEAD
 <<<<<<< HEAD
                 units[hero] = null;
 =======
               //  units = null;
 >>>>>>> 29ef97d2b55e6eae9bc0499326477d690f893229
+=======
+                units = null;
+>>>>>>> parent of 3c627e0... Revert "v12"
             }
 
         }
