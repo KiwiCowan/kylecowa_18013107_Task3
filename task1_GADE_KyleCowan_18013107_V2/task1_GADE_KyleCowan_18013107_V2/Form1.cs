@@ -95,7 +95,7 @@ namespace task1_GADE_KyleCowan_18013107_V2
             Timer = 0;
             gameE.map.GenMap();
             gameE.map.PopMap();
-            //gameE.map.UnitSpawner();
+            gameE.map.UnitSpawner();
             gameE.PlayGame();
             tmrTimer.Start();
 
